@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I LOVE YOU JAAN</title>
+    <title>I Love You ❤️</title>
     <style>
         body {
             text-align: center;
-            background-color: pink;
+            background: url('love-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
             font-family: Arial, sans-serif;
+            color: white;
         }
         h1 {
             font-size: 50px;
-            color: red;
-            margin-top: 100px;
-            animation: glow 1s infinite alternate;
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 10px red; }
-            to { text-shadow: 0 0 20px darkred; }
+            margin-top: 20%;
         }
         button {
             background-color: red;
@@ -37,8 +33,18 @@
 </head>
 <body>
 
-    <h1>I LOVE YOU JAAN ❤️</h1>
-    <button onclick="window.location.href='story.html'">Our Love Story</button>
+    <h1>I LOVE YOU ❤️</h1>
+    <button onclick="window.location.href='story.html'">Next</button>
+
+    <script>
+        // Keep song playing across pages
+        if (!sessionStorage.getItem("songPlaying")) {
+            var audio = new Audio("Tum-Hi-Ho.mp3");
+            audio.loop = true;
+            audio.play();
+            sessionStorage.setItem("songPlaying", "true");
+        }
+    </script>
 
 </body>
 </html>
