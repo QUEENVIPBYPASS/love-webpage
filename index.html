@@ -47,7 +47,7 @@
             border: none;
             font-size: 20px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 10px;
             border-radius: 10px;
         }
         button:hover {
@@ -59,14 +59,25 @@
 
     <div class="heart"></div>
     <h2>My Love ❤️</h2>
-    <img src="gf-photo.jpg" alt="My Love">
+    <img src="https://via.placeholder.com/200" alt="My Love">
     <br>
     <button onclick="window.location.href='love.html'">Click Here</button>
 
-    <!-- 🎵 Background Music -->
-    <audio autoplay loop>
+    <br><br>
+    <!-- Play & Stop Buttons -->
+    <button onclick="playSong()">▶ Play Song</button>
+    <button onclick="stopSong()">⏹ Stop Song</button>
+
+    <!-- Audio Player -->
+    <audio id="loveSong">
         <source src="Tum-Hi-Ho.mp3" type="audio/mp3">
     </audio>
+
+    <script>
+        var song = document.getElementById("loveSong");
+        function playSong() { song.play(); }
+        function stopSong() { song.pause(); song.currentTime = 0; }
+    </script>
 
 </body>
 </html>
